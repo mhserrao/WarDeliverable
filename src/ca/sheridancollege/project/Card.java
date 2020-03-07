@@ -13,6 +13,8 @@ package ca.sheridancollege.project;
  */
 public abstract class Card 
 {
+    public enum Suit {}
+    public enum Value {}
     //default modifier for child classes
     
     /**
