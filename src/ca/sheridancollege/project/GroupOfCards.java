@@ -14,30 +14,28 @@ import java.util.Collections;
  * The group of cards has a maximum size attribute which is flexible for reuse.
  * @author dancye
  */
-public class GroupOfCards 
-{
+public class GroupOfCards {
    
     //The group of cards, stored in an ArrayList
     private ArrayList <Card> cards;
     private int size;//the size of the grouping
     
-    public GroupOfCards(int givenSize)
-    {
-        size = givenSize;
+    Validator isValid = new Validator();
+    
+    public GroupOfCards(int givenSize) throws IllegalArgumentException {
+        setSize(givenSize);
     }
     
     /**
      * A method that will get the group of cards as an ArrayList
      * @return the group of cards.
      */
-    public ArrayList<Card> showCards()
-    {
-        return cards;
+    public ArrayList<Card> showCards(){
+        return getCards();
     }
     
-    public void shuffle()
-    {
-        Collections.shuffle(cards);
+    public void shuffle() {
+        Collections.shuffle(getCards());
     }
 
     /**
@@ -51,7 +49,29 @@ public class GroupOfCards
      * @param givenSize the max size for the group of cards
      */
     public void setSize(int givenSize) {
+       if(!isValid.isPositiveInt(givenSize)){
+            throw new IllegalArgumentException ("Please enter a positive number!");
+        }
         size = givenSize;
     }
+
+    /**
+     * @return the cards
+     */
+    public ArrayList<Card> getCards() {
+        return cards;
+    }
+
+    /**
+     * @param cards the cards to set
+     */
+    public void setCards(ArrayList <Card> cards) {
+        this.cards = cards;
+        this.size = cards.size();
+    }
     
-}//end class
+    public void addCards(ArrayList <Card> cards) {
+        this.cards.addAll(cards);
+        this.size += cards.size();
+    }
+}
