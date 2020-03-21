@@ -13,8 +13,46 @@ package ca.sheridancollege.project;
  */
 public abstract class Card 
 {
-    public enum Suit {}
-    public enum Value {}
+    public enum Suit {
+    HEARTS (4), 
+    DIAMONDS (3), 
+    SPADES (2), 
+    CLUBS (1);
+    
+    private final int SHAPE;
+    
+    Suit (int shape){
+        this.SHAPE = shape;
+    }
+    
+    public int getShape () {
+        return SHAPE;
+    }
+    }
+    public enum Rank {TWO(2),
+    THREE(3),
+    FOUR(4),
+    FIVE(5),
+    SIX(6),
+    SEVEN(7),
+    EIGHT(8),
+    NINE(9),
+    TEN(10),
+    JACK(11),
+    QUEEN(12),
+    KING(13),
+    ACE(14);
+
+    private final int CARDNUMBER;
+
+    Rank(int i) {
+        this.CARDNUMBER = i;
+    }
+    
+    public int getCardNumber() {
+        return CARDNUMBER;
+    }
+}
     //default modifier for child classes
     
     /**
