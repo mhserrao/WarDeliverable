@@ -16,26 +16,35 @@ import java.util.Collections;
  */
 public class GroupOfCards {
    
+    //uses PlayingCard class (child of the abstract Card class)
+    
     //The group of cards, stored in an ArrayList
-    private ArrayList <Card> cards;
-    private int size;//the size of the grouping
+    private ArrayList <PlayingCard> cards = new ArrayList <PlayingCard>();
+    private int size = this.cards.size();//the size of the grouping
     
     Validator isValid = new Validator();
     
-    public GroupOfCards(int givenSize) throws IllegalArgumentException {
+    public GroupOfCards(int givenSize) {
         setSize(givenSize);
+    }
+
+    public GroupOfCards() {
+    }
+    
+    public GroupOfCards(ArrayList<PlayingCard> cards){
+        setPlayingCards(cards);
     }
     
     /**
      * A method that will get the group of cards as an ArrayList
      * @return the group of cards.
      */
-    public ArrayList<Card> showCards(){
-        return getCards();
+    public ArrayList<PlayingCard> showCards() {
+        return cards;
     }
     
     public void shuffle() {
-        Collections.shuffle(getCards());
+        Collections.shuffle(cards);
     }
 
     /**
@@ -48,30 +57,39 @@ public class GroupOfCards {
     /**
      * @param givenSize the max size for the group of cards
      */
-    public void setSize(int givenSize) {
-       if(!isValid.isPositiveInt(givenSize)){
-            throw new IllegalArgumentException ("Please enter a positive number!");
+    public void setSize(int givenSize) throws IllegalArgumentException {
+        if(!isValid.isZeroAndGreaterInt(givenSize)){
+            throw new IllegalArgumentException("Please enter a non-negative number!");
         }
-        size = givenSize;
+        this.size = givenSize;
     }
-
-    /**
-     * @return the cards
-     */
-    public ArrayList<Card> getCards() {
-        return cards;
-    }
-
+    
     /**
      * @param cards the cards to set
      */
-    public void setCards(ArrayList <Card> cards) {
+    public void setPlayingCards(ArrayList <PlayingCard> cards) {
         this.cards = cards;
-        this.size = cards.size();
+        this.size = this.cards.size();
     }
     
-    public void addCards(ArrayList <Card> cards) {
+    public void addPlayingCards(ArrayList <PlayingCard> cards) {
         this.cards.addAll(cards);
-        this.size += cards.size();
+        this.size = this.cards.size();
     }
-}
+    
+    public void addCard(PlayingCard cardWon){
+        this.cards.add(cardWon);
+        this.size = this.cards.size();
+    }
+    
+    public ArrayList<PlayingCard> removePlayingCards(int n) {
+        ArrayList<PlayingCard> lostCards = new ArrayList<PlayingCard>();
+        if(n<=this.cards.size()){
+            for(int i = 0; i<n; i++){
+                lostCards.add(this.cards.remove(cards.size()-1));
+            }
+        }
+        this.size = this.cards.size();
+        return lostCards;
+    }
+}//end class
