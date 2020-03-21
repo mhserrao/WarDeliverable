@@ -18,17 +18,17 @@ public class DeckOfCards extends GroupOfCards {
 
     public DeckOfCards() {
         super(52);
-        ArrayList<PlayingCard> newDeck = new ArrayList<PlayingCard>(52);
+        ArrayList<WarCard> newDeck = new ArrayList<WarCard>(52);
 
         int countCards = 0;
         Suit[] suitArray = Suit.values();
-        Value[] valuesArray = Value.values();
+        Rank[] valuesArray = Rank.values();
 
         for (int i = 0; i < suitArray.length; i++) {
             Suit newSuit = suitArray[i];
             for (int j = 0; j < valuesArray.length; j++) {
-                Value newValue = valuesArray[j];
-                PlayingCard newCard = new PlayingCard(newValue, newSuit);
+                Rank newRank = valuesArray[j];
+                WarCard newCard = new WarCard(newRank, newSuit);
                 newDeck.add(newCard);
             }
         }
