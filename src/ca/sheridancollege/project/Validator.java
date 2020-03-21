@@ -74,4 +74,24 @@ public class Validator {
         return value;
     }
     
+    /**
+     * A method to check if an object is of class Integer and is zero or greater
+     * than zero.
+     *
+     * @param value the object that needs to be checked as an Integer object
+     * that is zero or greater than zero.
+     * @return boolean true if value is of class Integer and is zero or greater
+     * than zero or false if not.
+     */
+    public boolean isZeroAndGreaterInt(Object value) {
+        boolean isInt = false;
+        if (value instanceof Integer) {
+            int newVal = (int) value;
+            if (newVal > -1) {
+                isInt = true;
+            }
+        }
+        return isInt;
+    }
+    
 }

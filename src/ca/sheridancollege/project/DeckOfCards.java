@@ -5,6 +5,8 @@
  */
 package ca.sheridancollege.project;
 
+import ca.sheridancollege.project.WarCard.Rank;
+import ca.sheridancollege.project.WarCard.Suit;
 import java.util.ArrayList;
 
 /**
@@ -28,7 +30,7 @@ public class DeckOfCards extends GroupOfCards {
             Suit newSuit = suitArray[i];
             for (int j = 0; j < valuesArray.length; j++) {
                 Rank newRank = valuesArray[j];
-                WarCard newCard = new WarCard(newRank, newSuit);
+                WarCard newCard = new WarCard(newSuit, newRank);
                 newDeck.add(newCard);
             }
         }
