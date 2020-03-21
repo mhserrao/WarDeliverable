@@ -19,7 +19,7 @@ public class GroupOfCards {
     //uses PlayingCard class (child of the abstract Card class)
     
     //The group of cards, stored in an ArrayList
-    private ArrayList <PlayingCard> cards = new ArrayList <PlayingCard>();
+    private ArrayList <WarCard> cards = new ArrayList <WarCard>();
     private int size = this.cards.size();//the size of the grouping
     
     Validator isValid = new Validator();
@@ -31,7 +31,7 @@ public class GroupOfCards {
     public GroupOfCards() {
     }
     
-    public GroupOfCards(ArrayList<PlayingCard> cards){
+    public GroupOfCards(ArrayList<WarCard> cards){
         setPlayingCards(cards);
     }
     
@@ -39,7 +39,7 @@ public class GroupOfCards {
      * A method that will get the group of cards as an ArrayList
      * @return the group of cards.
      */
-    public ArrayList<PlayingCard> showCards() {
+    public ArrayList<WarCard> showCards() {
         return cards;
     }
     
@@ -67,23 +67,23 @@ public class GroupOfCards {
     /**
      * @param cards the cards to set
      */
-    public void setPlayingCards(ArrayList <PlayingCard> cards) {
+    public void setPlayingCards(ArrayList <WarCard> cards) {
         this.cards = cards;
         this.size = this.cards.size();
     }
     
-    public void addPlayingCards(ArrayList <PlayingCard> cards) {
+    public void addPlayingCards(ArrayList <WarCard> cards) {
         this.cards.addAll(cards);
         this.size = this.cards.size();
     }
     
-    public void addCard(PlayingCard cardWon){
+    public void addCard(WarCard cardWon){
         this.cards.add(cardWon);
         this.size = this.cards.size();
     }
     
-    public ArrayList<PlayingCard> removePlayingCards(int n) {
-        ArrayList<PlayingCard> lostCards = new ArrayList<PlayingCard>();
+    public ArrayList<WarCard> removePlayingCards(int n) {
+        ArrayList<WarCard> lostCards = new ArrayList<WarCard>();
         if(n<=this.cards.size()){
             for(int i = 0; i<n; i++){
                 lostCards.add(this.cards.remove(cards.size()-1));
