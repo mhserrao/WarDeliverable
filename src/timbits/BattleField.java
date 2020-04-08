@@ -41,7 +41,7 @@ public class BattleField {
         String myName = isValid.checkString(scan);
         me.setPlayerID(myName);
         System.out.println("\nWho are you facing?");
-        String oppName = isValid.checkString(scan);
+        String oppName = isValid.checkNameString(scan, myName);
         opp.setPlayerID(oppName);
 
         System.out.println("\nOkay, let's battle!\n");

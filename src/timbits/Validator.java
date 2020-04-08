@@ -82,6 +82,41 @@ public class Validator {
         } while (!isString);
         return value;
     }
+    
+    /**
+     * A method that takes a Scanner object and String as input and checks if 
+     * the input is a valid String and that it is not the same as the parameter 
+     * entered. If the input is not a valid String (i.e. is null or empty), or 
+     * the String is the same as the parameter, the method continuously 
+     * reprompts the user until the input is a unique valid String.
+     *
+     * @param scan Scanner object that takes user input.
+     * @param name - String that the return value should not be equal to
+     * @return a valid String.
+     */
+    public String checkNameString(Scanner scan, String name) {
+        String value = "";
+        boolean isString = false;
+        do {
+            try {
+                value = scan.nextLine();
+                if (value == null) {
+                    throw new NullPointerException("The string can't be a null"
+                            + " object!");
+                } else if (value.trim().equals("")) {
+                    throw new IllegalArgumentException("Your string can't be "
+                            + "empty!");
+                } else if (name.equals(value)){
+                    throw new IllegalArgumentException("That name is already "
+                            + "taken! Please enter a new name!");
+                }
+                isString = true;
+            } catch (Exception x) {
+                System.out.println(x.getMessage());
+            }
+        } while (!isString);
+        return value;
+    }
 
     /**
      * A method to check if an object is of class Integer and is zero or greater
@@ -166,5 +201,7 @@ public class Validator {
         } while (!isInt);
         return value;
     }
+    
+     
 
 }//end of class
