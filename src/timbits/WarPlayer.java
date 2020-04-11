@@ -84,8 +84,12 @@ public class WarPlayer extends Player {
      */
     public WarCard drawCard() {
         changePiles();
-        WarCard betCard = new WarCard();
-        betCard = (this.getPlayersCards().removePlayingCards(1)).get(0);
+        WarCard betCard = null;
+        ArrayList<WarCard> removedCards;
+        removedCards = this.getPlayersCards().removePlayingCards(1);
+        if(!removedCards.isEmpty()){
+           betCard = removedCards.get(0);
+        }
         return betCard;
     }
 
@@ -95,11 +99,11 @@ public class WarPlayer extends Player {
      * pile.
      */
     public void changePiles() {
-        ArrayList<WarCard> newCards = new ArrayList<WarCard>();
         if (!checkPile() && checkCardsWonPile()) {
-            newCards = this.getCardsWon().
+            ArrayList<WarCard> newCards = getCardsWon().
                     removePlayingCards(getCardsWon().getSize());
-            this.getPlayersCards().addPlayingCards(newCards);
+            
+            getPlayersCards().addPlayingCards(newCards);
             System.out.println(getPlayerID() + "'s deck is being shuffled. "
                     + getPlayerID() + " has " + getPlayersCards().getSize()
                     + " cards.");
@@ -181,7 +185,9 @@ public class WarPlayer extends Player {
      * @param cardWon WarCard won by the WarPlayer
      */
     public void addToWonCards(WarCard cardWon) {
-        this.cardsWon.addCard(cardWon);
+        if(cardWon != null){
+            cardsWon.addCard(cardWon);
+        }
     }
 
     /**
