@@ -16,7 +16,7 @@ import org.junit.Rule;
 import org.junit.contrib.java.lang.system.ExpectedSystemExit;
 
 /**
- * Tests of the methods in the WarPlayer Class
+ * Tests of the methods in the WarPlayer Class.
  * @author Jovanka Milosevic
  */
 public class WarPlayerTest {
