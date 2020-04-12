@@ -70,7 +70,9 @@ public class GroupOfCards {
      * random fashion.
      */
     public void shuffle() {
+        if(!null){
         Collections.shuffle(cards);
+        }
     }
 
     /**
