@@ -70,7 +70,7 @@ public class GroupOfCards {
      * random fashion.
      */
     public void shuffle() {
-        if(!null){
+        if(this!=null){
         Collections.shuffle(cards);
         }
     }
@@ -106,8 +106,10 @@ public class GroupOfCards {
      * @param cards the cards to set
      */
     public void setPlayingCards(ArrayList<WarCard> cards) {
+        if(cards!=null) {
         this.cards = cards;
         this.size = this.cards.size();
+        }
     }
 
     /**
