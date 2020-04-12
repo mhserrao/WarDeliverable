@@ -10,14 +10,15 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 /**
+ * A class that tests the methods in the Validator class.
  *
- * @author maizi
+ * @author Maiziel Serrao
  */
 public class ValidatorTest {
-    
+
     public ValidatorTest() {
     }
-    
+
     //Tests for isPositiveInt() method
     
     /**
@@ -35,7 +36,7 @@ public class ValidatorTest {
     }
 
     /**
-     * A test that gives the isPositiveInt() method an invalid integer and 
+     * A test that gives the isPositiveInt() method an invalid integer and
      * expects a false result.
      */
     @Test
@@ -47,10 +48,10 @@ public class ValidatorTest {
         boolean result = instance.isPositiveInt(value);
         assertEquals(expResult, result);
     }
-    
+
     /**
-     * A test that gives the isPositiveInt() method a string and expects a 
-     * false result.
+     * A test that gives the isPositiveInt() method a string and expects a false
+     * result.
      */
     @Test
     public void testIsIntBadString() {
@@ -61,10 +62,10 @@ public class ValidatorTest {
         boolean result = instance.isPositiveInt(value);
         assertEquals(expResult, result);
     }
-    
+
     /**
-     * A test that gives the isPositiveInt() method a string and expects a 
-     * false result.
+     * A test that gives the isPositiveInt() method a string and expects a false
+     * result.
      */
     @Test
     public void testIsIntBadNull() {
@@ -75,10 +76,10 @@ public class ValidatorTest {
         boolean result = instance.isPositiveInt(value);
         assertEquals(expResult, result);
     }
-    
+
     /**
-     * A test that gives the isPositiveInt() method a double and expects a 
-     * false result.
+     * A test that gives the isPositiveInt() method a double and expects a false
+     * result.
      */
     @Test
     public void testIsIntBadDouble() {
@@ -89,9 +90,9 @@ public class ValidatorTest {
         boolean result = instance.isPositiveInt(value);
         assertEquals(expResult, result);
     }
-    
+
     /**
-     * A test that gives the isPositiveInt() method a maximum positive integer 
+     * A test that gives the isPositiveInt() method a maximum positive integer
      * value and expects a true result.
      */
     @Test
@@ -103,9 +104,9 @@ public class ValidatorTest {
         boolean result = instance.isPositiveInt(value);
         assertEquals(expResult, result);
     }
-    
+
     /**
-     * A test that gives the isPositiveInt() method 0 and expects a false 
+     * A test that gives the isPositiveInt() method 0 and expects a false
      * result.
      */
     @Test
@@ -117,9 +118,8 @@ public class ValidatorTest {
         boolean result = instance.isPositiveInt(value);
         assertEquals(expResult, result);
     }
-    
+
     //Tests for isValidString() method
-    
     /**
      * A test that gives the isValidString() method a valid string and expects a
      * true result.
@@ -133,9 +133,9 @@ public class ValidatorTest {
         boolean result = instance.isValidString(value);
         assertEquals(expResult, result);
     }
-    
+
     /**
-     * A test that gives the isValidString() method an invalid String with only 
+     * A test that gives the isValidString() method an invalid String with only
      * spaces and expects a false result.
      */
     @Test
@@ -147,9 +147,9 @@ public class ValidatorTest {
         boolean result = instance.isValidString(value);
         assertEquals(expResult, result);
     }
-    
+
     /**
-     * A test that gives the isValidString() method a null String and expects a 
+     * A test that gives the isValidString() method a null String and expects a
      * false result.
      */
     @Test
@@ -161,8 +161,8 @@ public class ValidatorTest {
         boolean result = instance.isValidString(value);
         assertEquals(expResult, result);
     }
-    
-     /**
+
+    /**
      * A test that gives the isValidString() method a String with one character
      * and expects a true result.
      */
@@ -175,7 +175,7 @@ public class ValidatorTest {
         boolean result = instance.isValidString(value);
         assertEquals(expResult, result);
     }
-    
+
     //Tests for isZeroAndGreaterInt() method
     
     /**
@@ -191,7 +191,7 @@ public class ValidatorTest {
         boolean result = instance.isZeroAndGreaterInt(value);
         assertEquals(expResult, result);
     }
-    
+
     /**
      * A test that gives the isZeroAndGreaterInt() method an integer below zero
      * expects a false result.
@@ -205,7 +205,7 @@ public class ValidatorTest {
         boolean result = instance.isZeroAndGreaterInt(value);
         assertEquals(expResult, result);
     }
-    
+
     /**
      * A test that gives the isZeroAndGreaterInt() method a String value and
      * expects a false result.
@@ -219,7 +219,7 @@ public class ValidatorTest {
         boolean result = instance.isZeroAndGreaterInt(value);
         assertEquals(expResult, result);
     }
-    
+
     /**
      * A test that gives the isZeroAndGreaterInt() method a null value and
      * expects a false result.
@@ -233,7 +233,7 @@ public class ValidatorTest {
         boolean result = instance.isZeroAndGreaterInt(value);
         assertEquals(expResult, result);
     }
-    
+
     /**
      * A test that gives the isZeroAndGreaterInt() method a double value and
      * expects a false result.
@@ -247,9 +247,9 @@ public class ValidatorTest {
         boolean result = instance.isZeroAndGreaterInt(value);
         assertEquals(expResult, result);
     }
-    
+
     /**
-     * A test that gives the isZeroAndGreaterInt() method the maximum positive 
+     * A test that gives the isZeroAndGreaterInt() method the maximum positive
      * integer value and expects a true result.
      */
     @Test
@@ -261,9 +261,9 @@ public class ValidatorTest {
         boolean result = instance.isZeroAndGreaterInt(value);
         assertEquals(expResult, result);
     }
-    
+
     /**
-     * A test that gives the isZeroAndGreaterInt() method the minimum valid 
+     * A test that gives the isZeroAndGreaterInt() method the minimum valid
      * integer value and expects a true result.
      */
     @Test
@@ -276,6 +276,5 @@ public class ValidatorTest {
         assertEquals(expResult, result);
     }
 
-    
 }//end of class
 

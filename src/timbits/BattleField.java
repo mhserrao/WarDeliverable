@@ -20,6 +20,7 @@ public class BattleField {
 
     /**
      * Contains all the logic of the card game of War.
+     *
      * @param args the command line arguments
      */
     public static void main(String[] args) {
@@ -71,7 +72,7 @@ public class BattleField {
                 war.concede();
             }
         } while (option > 0);
-        
+
     }//end of main method
 
 }//end of class

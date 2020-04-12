@@ -13,6 +13,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
+ * A class that tests the WarCard class.
  *
  * @author Thy Nguyen
  */
@@ -33,15 +34,15 @@ public class WarCardTest {
         assertEquals(expResult, result);
 
     }
-    /**
-     * Test of equals method, of class WarCard.
-     */
+
+    //Test of equals method of WarCard class.
+    
     /**
      * A test that gives the equals() method a null object and expects a false
      * result.
      */
     @Test
-    public void testEquals() {
+    public void testEqualsBad() {
         System.out.println("equals");
         Object object = null;
         WarCard instance = new WarCard();
@@ -57,7 +58,7 @@ public class WarCardTest {
      * and expects a false result.
      */
     @Test
-    public void testEquals1() {
+    public void testEqualsBoundarySuit() {
         System.out.println("equals");
         WarCard instance = new WarCard();
         boolean expResult = false;
@@ -71,7 +72,7 @@ public class WarCardTest {
      * expects a false result.
      */
     @Test
-    public void testEquals2() {
+    public void testEqualsBoundaryRank() {
         System.out.println("equals");
         WarCard instance = new WarCard();
         boolean expResult = false;
@@ -81,9 +82,8 @@ public class WarCardTest {
     }
 
     /**
-     * A test that gives the equals() method the JACK(RANK - enum) object and the
-     * ACE(RANK- enum) and
-     * expects a true result.
+     * A test that gives the equals() method the JACK(RANK - enum) object and
+     * the ACE(RANK- enum) and expects a true result.
      */
     @Test
     public void testEqualsGood() {
@@ -95,5 +95,4 @@ public class WarCardTest {
 
     }
 
-
-}
+}//end of class

@@ -82,12 +82,12 @@ public class Validator {
         } while (!isString);
         return value;
     }
-    
+
     /**
-     * A method that takes a Scanner object and String as input and checks if 
-     * the input is a valid String and that it is not the same as the parameter 
-     * entered. If the input is not a valid String (i.e. is null or empty), or 
-     * the String is the same as the parameter, the method continuously 
+     * A method that takes a Scanner object and String as input and checks if
+     * the input is a valid String and that it is not the same as the parameter
+     * entered. If the input is not a valid String (i.e. is null or empty), or
+     * the String is the same as the parameter, the method continuously
      * reprompts the user until the input is a unique valid String.
      *
      * @param scan Scanner object that takes user input.
@@ -106,7 +106,7 @@ public class Validator {
                 } else if (value.trim().equals("")) {
                     throw new IllegalArgumentException("Your string can't be "
                             + "empty!");
-                } else if (name.equals(value)){
+                } else if (name.equals(value)) {
                     throw new IllegalArgumentException("That name is already "
                             + "taken! Please enter a new name!");
                 }
@@ -201,7 +201,5 @@ public class Validator {
         } while (!isInt);
         return value;
     }
-    
-     
 
 }//end of class

@@ -31,14 +31,6 @@ public class DeckOfCards extends GroupOfCards {
         Suit[] suitArray = Suit.values();
         Rank[] valuesArray = Rank.values();
 
-//        for (int i = 0; i < 4; i++){
-//            Suit newSuit = Suit.SPADES;
-//            for (int j =0 ; j < 5; j++) {
-//                Rank newRank = valuesArray[j];
-//                WarCard newCard = new WarCard(newSuit, newRank);
-//                newDeck.add(newCard);
-//            } 
-//        }
         for (int i = 0; i < suitArray.length; i++) {
             Suit newSuit = suitArray[i];
             for (int j = 0; j < valuesArray.length; j++) {

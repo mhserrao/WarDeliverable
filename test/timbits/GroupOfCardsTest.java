@@ -10,23 +10,23 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 import org.junit.Test;
 
-
 /**
- *A class to test the methods in GroupOfCards class
- * @author carrieaubin, 2020
+ * A class to test the methods in GroupOfCards class.
+ *
+ * @author Carrie Aubin
  */
-public class GroupOfCardsTest{
- 
+public class GroupOfCardsTest {
+
     public GroupOfCardsTest() {
-    
+
     }
-    
+
     /**
-     * 
-     * Checks that the shuffle method shuffles a GroupOfCards
-     * and checks if it is equal to a copy of the original GroupOfCards
-     * using the equals method and returns false as the result.
-     * 
+     *
+     * Checks that the shuffle method shuffles a GroupOfCards and checks if it
+     * is equal to a copy of the original GroupOfCards using the equals method
+     * and returns false as the result.
+     *
      */
     @Test
     public void testShuffleGood() {
@@ -34,7 +34,7 @@ public class GroupOfCardsTest{
         DeckOfCards deck = new DeckOfCards();
         ArrayList<WarCard> cards1 = new ArrayList<WarCard>();
         ArrayList<WarCard> cards2 = new ArrayList<WarCard>();
-        for(int i=0;i<deck.getSize();i++){
+        for (int i = 0; i < deck.getSize(); i++) {
             cards1.add(deck.showCards().get(i));
             cards2.add(deck.showCards().get(i));
         }
@@ -43,15 +43,15 @@ public class GroupOfCardsTest{
         hand.shuffle();
         boolean expResult = false;
         boolean result = hand.showCards().equals(handCopy.showCards());
-        assertEquals(expResult,result); 
+        assertEquals(expResult, result);
     }
-    
+
     /**
-     * 
-     * A method that checks if the GroupOfCards are shuffled by comparing
-     * it to the original GroupOfCards using the equals method and returns true
-     * as the result, meaning that the cards were not shuffled.
-     * 
+     *
+     * A method that checks if the GroupOfCards are shuffled by comparing it to
+     * the original GroupOfCards using the equals method and returns true as the
+     * result, meaning that the cards were not shuffled.
+     *
      */
     @Test
     public void testShuffleBad() {
@@ -59,7 +59,7 @@ public class GroupOfCardsTest{
         DeckOfCards deck = new DeckOfCards();
         ArrayList<WarCard> cards1 = new ArrayList<WarCard>();
         ArrayList<WarCard> cards2 = new ArrayList<WarCard>();
-        for(int i=0;i<deck.getSize();i++){
+        for (int i = 0; i < deck.getSize(); i++) {
             cards1.add(deck.showCards().get(i));
             cards2.add(deck.showCards().get(i));
         }
@@ -68,14 +68,14 @@ public class GroupOfCardsTest{
 //      hand.shuffle();
         boolean expResult = true;
         boolean result = hand.showCards().equals(handCopy.showCards());
-        assertEquals(expResult,result); 
+        assertEquals(expResult, result);
     }
-    
+
     /**
-     * 
-     * A method that checks that a group of cards
-     * is shuffled with a minimum of two cards positioned differently.
-     * 
+     *
+     * A method that checks that a group of cards is shuffled with a minimum of
+     * two cards positioned differently.
+     *
      */
     @Test
     public void testShuffleBoundary() {
@@ -83,7 +83,7 @@ public class GroupOfCardsTest{
         DeckOfCards deck = new DeckOfCards();
         ArrayList<WarCard> cards1 = new ArrayList<WarCard>();
         ArrayList<WarCard> cards2 = new ArrayList<WarCard>();
-        for(int i=0;i<deck.getSize();i++){
+        for (int i = 0; i < deck.getSize(); i++) {
             cards1.add(deck.showCards().get(i));
             cards2.add(deck.showCards().get(i));
         }
@@ -99,15 +99,14 @@ public class GroupOfCardsTest{
         hand.addCard(card1);
         boolean expResult = false;
         boolean result = hand.showCards().equals(handCopy.showCards());
-        assertEquals(expResult,result); 
+        assertEquals(expResult, result);
     }
-    
+
     /**
-     * 
+     *
      * Test of addPlayingCards method by checking if the size of the
-     * GroupOfCards increased by the size of the ArrayList of WarCards
-     * added.
-     * 
+     * GroupOfCards increased by the size of the ArrayList of WarCards added.
+     *
      */
     @Test
     public void testAddPlayingCardsGood() {
@@ -116,26 +115,27 @@ public class GroupOfCardsTest{
         ArrayList<WarCard> cards1 = new ArrayList<WarCard>();
         ArrayList<WarCard> cards2 = new ArrayList<WarCard>();
         ArrayList<WarCard> cards3 = new ArrayList<WarCard>();
-        for(int i=0;i<26;i++){
+        for (int i = 0; i < 26; i++) {
             cards1.add(deck.showCards().get(i));
             cards2.add(deck.showCards().get(i));
         }
-        for(int i=26;i>=26 && i<52;i++){
+        for (int i = 26; i >= 26 && i < 52; i++) {
             cards3.add(deck.showCards().get(i));
         }
         GroupOfCards hand = new GroupOfCards(cards1);
         GroupOfCards handCopy = new GroupOfCards(cards2);
         hand.addPlayingCards(cards3);
         boolean expResult = true;
-        boolean result = hand.getSize() == handCopy.getSize()+cards3.size();
-        assertEquals(expResult,result); 
+        boolean result = hand.getSize() == handCopy.getSize() + cards3.size();
+        assertEquals(expResult, result);
     }
+
     /**
-     * 
-     * Tests the addPlayingCards method that returns results false
-     * if the GroupOfCards size is not equal to the size of GroupOfCards + 
-     * ArrayList of WarCards size .
-     * 
+     *
+     * Tests the addPlayingCards method that returns results false if the
+     * GroupOfCards size is not equal to the size of GroupOfCards + ArrayList of
+     * WarCards size .
+     *
      */
     @Test
     public void testAddPlayingCardsBad() {
@@ -144,26 +144,26 @@ public class GroupOfCardsTest{
         ArrayList<WarCard> cards1 = new ArrayList<WarCard>();
         ArrayList<WarCard> cards2 = new ArrayList<WarCard>();
         ArrayList<WarCard> cards3 = new ArrayList<WarCard>();
-        for(int i=0;i<26;i++){
+        for (int i = 0; i < 26; i++) {
             cards1.add(deck.showCards().get(i));
             cards2.add(deck.showCards().get(i));
         }
-        for(int i=26;i>=26 && i<52;i++){
+        for (int i = 26; i >= 26 && i < 52; i++) {
             cards3.add(deck.showCards().get(i));
         }
         GroupOfCards hand = new GroupOfCards(cards1);
         GroupOfCards handCopy = new GroupOfCards(cards2);
 //        hand.addPlayingCards(cards3);
         boolean expResult = false;
-        boolean result = hand.getSize() == handCopy.getSize()+cards3.size();
-        assertEquals(expResult,result); 
+        boolean result = hand.getSize() == handCopy.getSize() + cards3.size();
+        assertEquals(expResult, result);
     }
-    
+
     /**
-     * 
-     * A method that adds an ArrayList of WarCards to a GroupOfCards 
-     * making its size reach its maximum 52.
-     *  
+     *
+     * A method that adds an ArrayList of WarCards to a GroupOfCards making its
+     * size reach its maximum 52.
+     *
      */
     @Test
     public void testAddPlayingCardsBoundary() {
@@ -171,24 +171,23 @@ public class GroupOfCardsTest{
         DeckOfCards deck = new DeckOfCards();
         ArrayList<WarCard> cards1 = new ArrayList<WarCard>();
         ArrayList<WarCard> cards3 = new ArrayList<WarCard>();
-        for(int i=0;i<26;i++){
+        for (int i = 0; i < 26; i++) {
             cards1.add(deck.showCards().get(i));
         }
-        for(int i=26;i>=26 && i<52;i++){
+        for (int i = 26; i >= 26 && i < 52; i++) {
             cards3.add(deck.showCards().get(i));
         }
         GroupOfCards hand = new GroupOfCards(cards1);
         hand.addPlayingCards(cards3);
         boolean expResult = true;
         boolean result = hand.getSize() == 52;
-        assertEquals(expResult,result); 
+        assertEquals(expResult, result);
     }
 
     /**
-     * 
-     * Test of addCard method checks if the size of the GroupOfCards
-     * increased by one to confirm that the card was added
-     * .
+     *
+     * Test of addCard method checks if the size of the GroupOfCards increased
+     * by one to confirm that the card was added .
      */
     @Test
     public void testAddCardGood() {
@@ -197,11 +196,11 @@ public class GroupOfCardsTest{
         ArrayList<WarCard> cards1 = new ArrayList<WarCard>();
         ArrayList<WarCard> cards2 = new ArrayList<WarCard>();
         ArrayList<WarCard> cards3 = new ArrayList<WarCard>();
-        for(int i=0;i<26;i++){
+        for (int i = 0; i < 26; i++) {
             cards1.add(deck.showCards().get(i));
             cards2.add(deck.showCards().get(i));
         }
-        for(int i=26;i>=26 && i<52;i++){
+        for (int i = 26; i >= 26 && i < 52; i++) {
             cards3.add(deck.showCards().get(i));
         }
         GroupOfCards hand = new GroupOfCards(cards1);
@@ -211,15 +210,15 @@ public class GroupOfCardsTest{
         card = hand2.showCards().get(0);
         hand.addCard(card);
         boolean expResult = true;
-        boolean result = hand.getSize() == handCopy.getSize()+1;
-        assertEquals(expResult,result); 
+        boolean result = hand.getSize() == handCopy.getSize() + 1;
+        assertEquals(expResult, result);
     }
-    
+
     /**
-     * 
-     * Test of addCard method that returns results false if the 
-     * GroupOfCards size is not equal to the size of GroupOfCards + 1.
-     * 
+     *
+     * Test of addCard method that returns results false if the GroupOfCards
+     * size is not equal to the size of GroupOfCards + 1.
+     *
      */
     @Test
     public void testAddCardBad() {
@@ -228,11 +227,11 @@ public class GroupOfCardsTest{
         ArrayList<WarCard> cards1 = new ArrayList<WarCard>();
         ArrayList<WarCard> cards2 = new ArrayList<WarCard>();
         ArrayList<WarCard> cards3 = new ArrayList<WarCard>();
-        for(int i=0;i<26;i++){
+        for (int i = 0; i < 26; i++) {
             cards1.add(deck.showCards().get(i));
             cards2.add(deck.showCards().get(i));
         }
-        for(int i=26;i>=26 && i<52;i++){
+        for (int i = 26; i >= 26 && i < 52; i++) {
             cards3.add(deck.showCards().get(i));
         }
         GroupOfCards hand = new GroupOfCards(cards1);
@@ -242,18 +241,16 @@ public class GroupOfCardsTest{
         card = hand2.showCards().get(0);
 //        hand.addCard(card);
         boolean expResult = false;
-        boolean result = hand.getSize() == handCopy.getSize()+1;
-        assertEquals(expResult,result); 
+        boolean result = hand.getSize() == handCopy.getSize() + 1;
+        assertEquals(expResult, result);
 
-        
     }
-    
+
     /**
-     * 
-     * A method that adds a card to a deck of cards with 51 cards
-     * is accepted, 52 being the maximum amount of cards a 
-     * GroupOfCards can have.
-     * 
+     *
+     * A method that adds a card to a deck of cards with 51 cards is accepted,
+     * 52 being the maximum amount of cards a GroupOfCards can have.
+     *
      */
     @Test
     public void testAddCardBoundary() {
@@ -261,7 +258,7 @@ public class GroupOfCardsTest{
         DeckOfCards deck = new DeckOfCards();
         ArrayList<WarCard> cards1 = new ArrayList<WarCard>();
         ArrayList<WarCard> cards2 = new ArrayList<WarCard>();
-        for(int i=0;i<deck.getSize()-1;i++){
+        for (int i = 0; i < deck.getSize() - 1; i++) {
             cards1.add(deck.showCards().get(i));
         }
         cards2.add(deck.showCards().get(51));
@@ -272,16 +269,15 @@ public class GroupOfCardsTest{
         hand.addCard(cardAdded);
         boolean expResult = true;
         boolean result = hand.getSize() == 52;
-        assertEquals(expResult,result); 
+        assertEquals(expResult, result);
     }
 
     /**
-     * 
-     * A test that gives the method removePlayingCards an int 
-     * value to remove the number of cards from hand and 
-     * checks of correct number of cards are removed by 
-     * comparing it to handCopy.
-     * 
+     *
+     * A test that gives the method removePlayingCards an int value to remove
+     * the number of cards from hand and checks of correct number of cards are
+     * removed by comparing it to handCopy.
+     *
      */
     @Test
     public void testRemovePlayingCardsGood() {
@@ -289,7 +285,7 @@ public class GroupOfCardsTest{
         DeckOfCards deck = new DeckOfCards();
         ArrayList<WarCard> cards1 = new ArrayList<WarCard>();
         ArrayList<WarCard> cards2 = new ArrayList<WarCard>();
-        for(int i=0;i<deck.getSize();i++){
+        for (int i = 0; i < deck.getSize(); i++) {
             cards1.add(deck.showCards().get(i));
             cards2.add(deck.showCards().get(i));
         }
@@ -297,15 +293,15 @@ public class GroupOfCardsTest{
         GroupOfCards handCopy = new GroupOfCards(cards2);
         hand.removePlayingCards(4);
         boolean expResult = true;
-        boolean result = hand.getSize() == handCopy.getSize()-4;
-        assertEquals(expResult,result); 
+        boolean result = hand.getSize() == handCopy.getSize() - 4;
+        assertEquals(expResult, result);
     }
-    
+
     /**
-     * 
-     * Test of removePlayingCards method, that returns the results true if the 
+     *
+     * Test of removePlayingCards method, that returns the results true if the
      * GroupOfCards size equals the original GroupOfCards size.
-     * 
+     *
      */
     @Test
     public void testRemovePlayingCardsBad() {
@@ -313,23 +309,21 @@ public class GroupOfCardsTest{
         DeckOfCards deck = new DeckOfCards();
         ArrayList<WarCard> cards1 = new ArrayList<WarCard>();
         ArrayList<WarCard> cards2 = new ArrayList<WarCard>();
-        for(int i=0;i<5;i++){
+        for (int i = 0; i < 5; i++) {
             cards1.add(deck.showCards().get(i));
             cards2.add(deck.showCards().get(i));
         }
         GroupOfCards hand = new GroupOfCards(cards1);
         GroupOfCards handCopy = new GroupOfCards(cards2);
-//        hand.removePlayingCards(5);
         boolean expResult = true;
         boolean result = hand.getSize() == handCopy.getSize();
-        assertEquals(expResult,result); 
+        assertEquals(expResult, result);
     }
-    
+
     /**
-     * 
-     * A method that checks that the number of cards removed is 
-     * equal to the size of the GroupOfCards is accepted by the
-     * removePlayingCards method.
+     *
+     * A method that checks that the number of cards removed is equal to the
+     * size of the GroupOfCards is accepted by the removePlayingCards method.
      *
      */
     @Test
@@ -339,7 +333,7 @@ public class GroupOfCardsTest{
         ArrayList<WarCard> cards1 = new ArrayList<WarCard>();
         ArrayList<WarCard> cards2 = new ArrayList<WarCard>();
         ArrayList<WarCard> cards3 = new ArrayList<WarCard>();
-        for(int i=0;i<5;i++){
+        for (int i = 0; i < 5; i++) {
             cards1.add(deck.showCards().get(i));
             cards2.add(deck.showCards().get(i));
         }
@@ -347,8 +341,8 @@ public class GroupOfCardsTest{
         GroupOfCards handCopy = new GroupOfCards(cards2);
         hand.removePlayingCards(4);
         boolean expResult = true;
-        boolean result = hand.getSize() == handCopy.getSize()-4;
-        assertEquals(expResult,result); 
+        boolean result = hand.getSize() == handCopy.getSize() - 4;
+        assertEquals(expResult, result);
     }
-    
+
 }//end of class

@@ -8,10 +8,11 @@ package timbits;
 import java.util.ArrayList;
 
 /**
- * This class is used to create a War card game Player.
+ * This class is used to create a WarPlayer in the card game of war. A WarPlayer
+ * has two GroupOfCards, one of the cards to be drawn and one of the cards that
+ * the WarPlayer has already won.
  *
  * @author Jovanka Milosevic
- * @modifiedby Maiziel Serrao
  */
 public class WarPlayer extends Player {
 
@@ -24,7 +25,7 @@ public class WarPlayer extends Player {
      * Constructor of the WarPlayer object. Takes in a String and sets the
      * WarPlayer's player ID to that String.
      *
-     * @param name
+     * @param name the player ID of the WarPlayer to be created
      */
     public WarPlayer(String name) {
         super(name);
@@ -87,8 +88,8 @@ public class WarPlayer extends Player {
         WarCard betCard = null;
         ArrayList<WarCard> removedCards;
         removedCards = this.getPlayersCards().removePlayingCards(1);
-        if(!removedCards.isEmpty()){
-           betCard = removedCards.get(0);
+        if (!removedCards.isEmpty()) {
+            betCard = removedCards.get(0);
         }
         return betCard;
     }
@@ -102,7 +103,7 @@ public class WarPlayer extends Player {
         if (!checkPile() && checkCardsWonPile()) {
             ArrayList<WarCard> newCards = getCardsWon().
                     removePlayingCards(getCardsWon().getSize());
-            
+
             getPlayersCards().addPlayingCards(newCards);
             System.out.println(getPlayerID() + "'s deck is being shuffled. "
                     + getPlayerID() + " has " + getPlayersCards().getSize()
@@ -185,7 +186,7 @@ public class WarPlayer extends Player {
      * @param cardWon WarCard won by the WarPlayer
      */
     public void addToWonCards(WarCard cardWon) {
-        if(cardWon != null){
+        if (cardWon != null) {
             cardsWon.addCard(cardWon);
         }
     }
@@ -210,5 +211,5 @@ public class WarPlayer extends Player {
     public int getTotalCardsAmount() {
         return playersCards.getSize() + cardsWon.getSize();
     }
-    
+
 }//end of class

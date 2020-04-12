@@ -9,15 +9,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
- * A concrete class that represents any grouping of cards for War. Every 
- * GroupOfCards object is composed of an ArrayList of WarCard of a specific 
+ * A concrete class that represents any grouping of cards for War. Every
+ * GroupOfCards object is composed of an ArrayList of WarCard of a specific
  * size.
  *
  * @author dancye
  * @modifiedBy Carrie Aubin
- * @modifiedBy Jovanka Milosevic
- * @modifiedBy Thy Nguyen
- * @modifiedBy Maiziel Serrao
  */
 public class GroupOfCards {
 
@@ -70,9 +67,7 @@ public class GroupOfCards {
      * random fashion.
      */
     public void shuffle() {
-        if(this!=null){
         Collections.shuffle(cards);
-        }
     }
 
     /**
@@ -106,10 +101,8 @@ public class GroupOfCards {
      * @param cards the cards to set
      */
     public void setPlayingCards(ArrayList<WarCard> cards) {
-        if(cards!=null) {
         this.cards = cards;
         this.size = this.cards.size();
-        }
     }
 
     /**
@@ -155,5 +148,5 @@ public class GroupOfCards {
         this.size = this.cards.size();
         return lostCards;
     }
-    
+
 }//end of class

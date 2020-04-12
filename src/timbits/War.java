@@ -120,7 +120,7 @@ public class War extends Game {
             oppCards.add(deck.showCards().get(i));
         }
 
-        me.setPlayersCards(new GroupOfCards(myCards)); 
+        me.setPlayersCards(new GroupOfCards(myCards));
         opp.setPlayersCards(new GroupOfCards(oppCards));
     }
 

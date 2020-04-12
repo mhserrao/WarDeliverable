@@ -10,9 +10,6 @@ package timbits;
  * class.
  *
  * @author dancye, 2018
- * @modifiedBy Carrie Aubin
- * @modifiedBy Jovanka Milosevic
- * @modifiedBy Thy Nguyen
  * @modifiedBy Maiziel Serrao
  */
 public abstract class Player {
@@ -46,7 +43,7 @@ public abstract class Player {
      */
     public void setPlayerID(String givenID) {
         if (isValid.isValidString(givenID)) {
-            playerID = givenID; //ensure this is unique!
+            playerID = givenID;
         }
     }
 

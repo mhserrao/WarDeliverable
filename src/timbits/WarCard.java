@@ -15,14 +15,14 @@ public class WarCard extends Card {
 
     // Card's suite is implemented as an enum
     public enum Suit {
-        
+
         CLUBS, DIAMONDS, HEARTS, SPADES
-        
+
     } //end of Suit enum
 
     // Card's value is implemented as an enum
     public enum Rank {
-        
+
         TWO(2), THREE(3), FOUR(4), FIVE(5), SIX(6), SEVEN(7), EIGHT(8), NINE(9),
         TEN(10), JACK(11), QUEEN(12), KING(13), ACE(14);
 
@@ -45,9 +45,9 @@ public class WarCard extends Card {
         public int getCardNumber() {
             return CARDNUMBER;
         }
-        
+
     }//end of Rank enum
-    
+
     //instance variables of WarCard object
     private Suit suit;
     private Rank rank;
@@ -59,7 +59,8 @@ public class WarCard extends Card {
     }
 
     /**
-     * A 2-param constructor that takes in suit and rank as parameters
+     * A 2-parameter constructor that takes in suit and rank as parameters and
+     * creates a new WarCard object with those parameters.
      *
      * @param suit The suit of the card as a parameter
      * @param rank The value of the card as a parameter
@@ -70,29 +71,27 @@ public class WarCard extends Card {
     }
 
     /**
-     * A getter that access the suit value
+     * A getter that access the suit value.
      *
-     * @return suit
+     * @return suit suit of the WarCard object
      */
     public Suit getSuit() {
         return suit;
     }
 
     /**
-     * A getter that access the card's value
+     * A getter that access the rank value.
      *
-     * @return value
+     * @return rank Rank of the WarCard object
      */
     public Rank getRank() {
         return rank;
     }
 
-    //default modifier for child classes
     /**
-     * Students should implement this method for their specific children classes
+     * A method that neatly prints the suit and rank of a WarCard.
      *
-     * @return a String representation of a card. Could be an UNO card, a
-     * regular playing card etc.
+     * @return a String representation of a WarCard.
      */
     @Override
     public String toString() {
@@ -104,8 +103,8 @@ public class WarCard extends Card {
      * object is instance of Card class, and if it is, compares two instances -
      * this object and the object that is passed as parameter
      *
-     * @param object
-     * @return true or false
+     * @param object the object to be compared with the WarCard object.
+     * @return true if objects have the same rank
      */
     @Override
     public boolean equals(Object object) {
